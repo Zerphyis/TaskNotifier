@@ -19,14 +19,22 @@ public class TaskEntity {
 
     public TaskEntity(){}
 
+
     public TaskEntity(Tasks data){
         this.title= data.title();
         this.description= data.description();
         this.emailDestiny= data.emailDestiny();
         this.datehourTimer=LocalDateTime.now();
-
     }
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
