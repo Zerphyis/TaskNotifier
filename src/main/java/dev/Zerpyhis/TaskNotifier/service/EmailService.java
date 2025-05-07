@@ -12,7 +12,6 @@ public class EmailService {
     @Autowired
     JavaMailSender sender;
 
-
     public void senderEmail(String para,String assunto,String title, String dataTarefa , String horaTarefa) throws MessagingException{
         MimeMessage mensagem=sender.createMimeMessage();
         MimeMessageHelper helper= new MimeMessageHelper(mensagem,true,"UTGF-8");
@@ -23,6 +22,7 @@ public class EmailService {
 
         sender.send(mensagem);
     }
+
     private String genereteHtml(String titulo,String data,String hora){
         return """
                     <html>
@@ -53,5 +53,4 @@ public class EmailService {
                             </html>
                         """.formatted(titulo, data, hora);
     }
-
 }
